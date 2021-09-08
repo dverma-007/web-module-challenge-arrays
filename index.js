@@ -2,37 +2,37 @@
 
 /* 👀 This is your data ⬇ */
 const originalFlavors = [
-  "Banana Nut Fudge",
-  "Black Walnut",
-  "Burgundy Cherry",
-  "Butterscotch Ribbon",
-  "Cherry Macaron",
-  "Chocolate",
-  "Chocolate Almond",
-  "Chocolate Chip",
-  "Chocolate Fudge",
-  "Chocolate Mint",
-  "Chocolate Ribbon",
-  "Coffee",
-  "Coffee Candy",
-  "Date Nut",
-  "Eggnog",
-  "French Vanilla",
-  "Green Mint Stick",
-  "Lemon Crisp",
-  "Lemon Custard",
-  "Lemon Sherbet",
-  "Maple Nut",
-  "Orange Sherbet",
-  "Peach",
-  "Peppermint Fudge Ribbon",
-  "Peppermint Stick",
-  "Pineapple Sherbet",
-  "Raspberry Sherbet",
-  "Rocky Road",
-  "Strawberry",
-  "Vanilla",
-  "Vanilla Burnt Almond"
+    "Banana Nut Fudge",
+    "Black Walnut",
+    "Burgundy Cherry",
+    "Butterscotch Ribbon",
+    "Cherry Macaron",
+    "Chocolate",
+    "Chocolate Almond",
+    "Chocolate Chip",
+    "Chocolate Fudge",
+    "Chocolate Mint",
+    "Chocolate Ribbon",
+    "Coffee",
+    "Coffee Candy",
+    "Date Nut",
+    "Eggnog",
+    "French Vanilla",
+    "Green Mint Stick",
+    "Lemon Crisp",
+    "Lemon Custard",
+    "Lemon Sherbet",
+    "Maple Nut",
+    "Orange Sherbet",
+    "Peach",
+    "Peppermint Fudge Ribbon",
+    "Peppermint Stick",
+    "Pineapple Sherbet",
+    "Raspberry Sherbet",
+    "Rocky Road",
+    "Strawberry",
+    "Vanilla",
+    "Vanilla Burnt Almond"
 ]
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: Copy the Array! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -45,10 +45,12 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
-}    
-
+function copy(array) {
+    /*your code here*/
+    let x = array.slice();
+    return x;
+}
+console.log(copy(originalFlavors));
 
 
 
@@ -64,9 +66,15 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(array) {
+    /*your code here*/
+    if (array.length === 31) {
+        return true;
+    }
+    return false;
 }
+console.log(is31Flavors(originalFlavors));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -81,9 +89,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(array, flavor) {
+    /*your code here*/
+    array.unshift(flavor);
+    return array;
 }
+console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,9 +108,12 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array) {
+    /*your code here*/
+    array.splice((array.length - 1), 1);
+    return array;
 }
+console.log(removeLastFlavor(originalFlavors));
 
 
 
@@ -114,9 +128,11 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, numb1) {
+    /*your code here*/
+    return array.splice(numb1, 1).join()
 }
+console.log(getFlavorByIndex(originalFlavors, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,8 +150,8 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName( /*your code here*/ ) {
+    /*your code here*/
 }
 
 
@@ -160,12 +176,12 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord( /*your code here*/ ) {
+    /*your code here*/
 }
 
 
-/* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
+/* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
 
@@ -177,8 +193,8 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength( /*code here*/ ) {
+    /*code here*/
 }
 
 
@@ -195,8 +211,8 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-  /*code here*/
+function getRandomFlavors( /*code here*/ ) {
+    /*code here*/
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
@@ -283,21 +299,20 @@ function getRandomFlavors(/*code here*/){
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
-function foo(){
-  console.log('its working');
-  return 'bar';
+function foo() {
+    console.log('its working');
+    return 'bar';
 }
 foo();
 module.exports = {
-  foo,
-  is31Flavors,
-  addFlavor,
-  removeLastFlavor,
-  getFlavorByIndex,
-  removeFlavorByName,
-  copy,
-  filterByWord,
-  getAverageWordLength,
-  getRandomFlavors
+    foo,
+    is31Flavors,
+    addFlavor,
+    removeLastFlavor,
+    getFlavorByIndex,
+    removeFlavorByName,
+    copy,
+    filterByWord,
+    getAverageWordLength,
+    getRandomFlavors
 }
-
