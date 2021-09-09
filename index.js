@@ -150,10 +150,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName( /*your code here*/ ) {
+function removeFlavorByName(array, flavor) {
     /*your code here*/
+    let x = array.indexOf(flavor);
+    array.splice(x, 1)
+    return array;
 }
-
+console.log(removeFlavorByName(originalFlavors, "Strawberry"));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -176,9 +179,18 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord( /*your code here*/ ) {
+function filterByWord(array, flavor) {
     /*your code here*/
+    let array2 = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].includes(flavor)) {
+            array2.push(array[i]);
+        }
+    }
+    return array2;
 }
+console.log(filterByWord(originalFlavors, "Chocolate"));
+
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
